@@ -1,0 +1,1348 @@
+23/04/08 19:56:26 DEBUG SparkSqlParser: Parsing command: insert into paimon.default.my_table_p values(1,1,'s','2022-01-01', '03')
+
+23/04/08 19:56:26 DEBUG CatalystSqlParser: Parsing command: spark_grouping_id
+23/04/08 19:56:27 INFO metastore: Trying to connect to metastore with URI thrift://localhost:9083
+23/04/08 19:56:27 INFO metastore: Opened a connection to metastore, current connections: 2
+23/04/08 19:56:27 INFO metastore: Connected to metastore.
+23/04/08 19:56:27 DEBUG CatalystSqlParser: Parsing command: dt
+23/04/08 19:56:27 DEBUG CatalystSqlParser: Parsing command: hh
+23/04/08 19:56:29 DEBUG GenerateUnsafeProjection: code for input[0, bigint, false],input[1, bigint, false],input[2, string, false],input[3, string, false],input[4, string, false]:
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificUnsafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificUnsafeProjection extends org.apache.spark.sql.catalyst.expressions.UnsafeProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 009 */
+/* 010 */   public SpecificUnsafeProjection(Object[] references) {
+/* 011 */     this.references = references;
+/* 012 */     mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(5, 96);
+/* 013 */
+/* 014 */   }
+/* 015 */
+/* 016 */   public void initialize(int partitionIndex) {
+/* 017 */
+/* 018 */   }
+/* 019 */
+/* 020 */   // Scala.Function1 need this
+/* 021 */   public java.lang.Object apply(java.lang.Object row) {
+/* 022 */     return apply((InternalRow) row);
+/* 023 */   }
+/* 024 */
+/* 025 */   public UnsafeRow apply(InternalRow i) {
+/* 026 */     mutableStateArray_0[0].reset();
+/* 027 */
+/* 028 */
+/* 029 */
+/* 030 */
+/* 031 */     long value_0 = i.getLong(0);
+/* 032 */     mutableStateArray_0[0].write(0, value_0);
+/* 033 */
+/* 034 */     long value_1 = i.getLong(1);
+/* 035 */     mutableStateArray_0[0].write(1, value_1);
+/* 036 */
+/* 037 */     UTF8String value_2 = i.getUTF8String(2);
+/* 038 */     mutableStateArray_0[0].write(2, value_2);
+/* 039 */
+/* 040 */     UTF8String value_3 = i.getUTF8String(3);
+/* 041 */     mutableStateArray_0[0].write(3, value_3);
+/* 042 */
+/* 043 */     UTF8String value_4 = i.getUTF8String(4);
+/* 044 */     mutableStateArray_0[0].write(4, value_4);
+/* 045 */     return (mutableStateArray_0[0].getRow());
+/* 046 */   }
+/* 047 */
+/* 048 */
+/* 049 */ }
+
+23/04/08 19:56:29 DEBUG CodeGenerator:
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificUnsafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificUnsafeProjection extends org.apache.spark.sql.catalyst.expressions.UnsafeProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[] mutableStateArray_0 = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter[1];
+/* 009 */
+/* 010 */   public SpecificUnsafeProjection(Object[] references) {
+/* 011 */     this.references = references;
+/* 012 */     mutableStateArray_0[0] = new org.apache.spark.sql.catalyst.expressions.codegen.UnsafeRowWriter(5, 96);
+/* 013 */
+/* 014 */   }
+/* 015 */
+/* 016 */   public void initialize(int partitionIndex) {
+/* 017 */
+/* 018 */   }
+/* 019 */
+/* 020 */   // Scala.Function1 need this
+/* 021 */   public java.lang.Object apply(java.lang.Object row) {
+/* 022 */     return apply((InternalRow) row);
+/* 023 */   }
+/* 024 */
+/* 025 */   public UnsafeRow apply(InternalRow i) {
+/* 026 */     mutableStateArray_0[0].reset();
+/* 027 */
+/* 028 */
+/* 029 */
+/* 030 */
+/* 031 */     long value_0 = i.getLong(0);
+/* 032 */     mutableStateArray_0[0].write(0, value_0);
+/* 033 */
+/* 034 */     long value_1 = i.getLong(1);
+/* 035 */     mutableStateArray_0[0].write(1, value_1);
+/* 036 */
+/* 037 */     UTF8String value_2 = i.getUTF8String(2);
+/* 038 */     mutableStateArray_0[0].write(2, value_2);
+/* 039 */
+/* 040 */     UTF8String value_3 = i.getUTF8String(3);
+/* 041 */     mutableStateArray_0[0].write(3, value_3);
+/* 042 */
+/* 043 */     UTF8String value_4 = i.getUTF8String(4);
+/* 044 */     mutableStateArray_0[0].write(4, value_4);
+/* 045 */     return (mutableStateArray_0[0].getRow());
+/* 046 */   }
+/* 047 */
+/* 048 */
+/* 049 */ }
+
+23/04/08 19:56:29 INFO CodeGenerator: Code generated in 247.555628 ms
+23/04/08 19:56:29 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$doExecute$1
+23/04/08 19:56:29 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$doExecute$1) is now cleaned +++
+23/04/08 19:56:29 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$rdd$1
+23/04/08 19:56:29 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$rdd$1) is now cleaned +++
+23/04/08 19:56:29 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$toScalaFunction$1
+23/04/08 19:56:29 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$toScalaFunction$1) is now cleaned +++
+23/04/08 19:56:29 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$groupBy$4
+23/04/08 19:56:29 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$groupBy$4) is now cleaned +++
+23/04/08 19:56:30 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$groupByKey$2
+23/04/08 19:56:30 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$groupByKey$2) is now cleaned +++
+23/04/08 19:56:30 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$groupByKey$3
+23/04/08 19:56:30 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$groupByKey$3) is now cleaned +++
+23/04/08 19:56:30 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$groupByKey$4
+23/04/08 19:56:30 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$groupByKey$4) is now cleaned +++
+23/04/08 19:56:30 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$groupByResultToJava$1
+23/04/08 19:56:30 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$groupByResultToJava$1) is now cleaned +++
+23/04/08 19:56:30 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$toScalaFunction$1
+23/04/08 19:56:30 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$toScalaFunction$1) is now cleaned +++
+23/04/08 19:56:30 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$values$1
+23/04/08 19:56:30 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$values$1) is now cleaned +++
+23/04/08 19:56:30 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$toScalaFunction2$1
+23/04/08 19:56:30 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$toScalaFunction2$1) is now cleaned +++
+23/04/08 19:56:30 DEBUG ClosureCleaner: Cleaning indylambda closure: $anonfun$runJob$6
+23/04/08 19:56:30 DEBUG ClosureCleaner:  +++ indylambda closure ($anonfun$runJob$6) is now cleaned +++
+23/04/08 19:56:30 INFO SparkContext: Starting job: reduce at SparkWrite.java:62
+23/04/08 19:56:30 DEBUG DAGScheduler: eagerlyComputePartitionsForRddAndAncestors for RDD 9 took 0.007301 seconds
+23/04/08 19:56:30 DEBUG DAGScheduler: Merging stage rdd profiles: Set()
+23/04/08 19:56:30 DEBUG DAGScheduler: Merging stage rdd profiles: Set()
+23/04/08 19:56:30 INFO DAGScheduler: Registering RDD 5 (groupBy at SparkWrite.java:59) as input to shuffle 0
+23/04/08 19:56:30 INFO DAGScheduler: Got job 0 (reduce at SparkWrite.java:62) with 1 output partitions
+23/04/08 19:56:30 INFO DAGScheduler: Final stage: ResultStage 1 (reduce at SparkWrite.java:62)
+23/04/08 19:56:30 INFO DAGScheduler: Parents of final stage: List(ShuffleMapStage 0)
+23/04/08 19:56:30 INFO DAGScheduler: Missing parents: List(ShuffleMapStage 0)
+23/04/08 19:56:30 DEBUG DAGScheduler: submitStage(ResultStage 1 (name=reduce at SparkWrite.java:62;jobs=0))
+23/04/08 19:56:30 DEBUG DAGScheduler: missing: List(ShuffleMapStage 0)
+23/04/08 19:56:30 DEBUG DAGScheduler: submitStage(ShuffleMapStage 0 (name=groupBy at SparkWrite.java:59;jobs=0))
+23/04/08 19:56:30 DEBUG DAGScheduler: missing: List()
+23/04/08 19:56:30 INFO DAGScheduler: Submitting ShuffleMapStage 0 (MapPartitionsRDD[5] at groupBy at SparkWrite.java:59), which has no missing parents
+23/04/08 19:56:30 DEBUG DAGScheduler: submitMissingTasks(ShuffleMapStage 0)
+23/04/08 19:56:30 INFO MemoryStore: Block broadcast_0 stored as values in memory (estimated size 14.7 KiB, free 366.3 MiB)
+23/04/08 19:56:30 DEBUG BlockManager: Put block broadcast_0 locally took 36 ms
+23/04/08 19:56:30 DEBUG BlockManager: Putting block broadcast_0 without replication took 38 ms
+23/04/08 19:56:30 INFO MemoryStore: Block broadcast_0_piece0 stored as bytes in memory (estimated size 7.7 KiB, free 366.3 MiB)
+23/04/08 19:56:30 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_0_piece0 for BlockManagerId(driver, 172.20.177.66, 36297, None)
+23/04/08 19:56:30 INFO BlockManagerInfo: Added broadcast_0_piece0 in memory on 172.20.177.66:36297 (size: 7.7 KiB, free: 366.3 MiB)
+23/04/08 19:56:30 DEBUG BlockManagerMaster: Updated info of block broadcast_0_piece0
+23/04/08 19:56:30 DEBUG BlockManager: Told master about block broadcast_0_piece0
+23/04/08 19:56:30 DEBUG BlockManager: Put block broadcast_0_piece0 locally took 15 ms
+23/04/08 19:56:30 DEBUG BlockManager: Putting block broadcast_0_piece0 without replication took 15 ms
+23/04/08 19:56:30 INFO SparkContext: Created broadcast 0 from broadcast at DAGScheduler.scala:1478
+23/04/08 19:56:30 INFO DAGScheduler: Submitting 1 missing tasks from ShuffleMapStage 0 (MapPartitionsRDD[5] at groupBy at SparkWrite.java:59) (first 15 tasks are for partitions Vector(0))
+23/04/08 19:56:30 INFO TaskSchedulerImpl: Adding task set 0.0 with 1 tasks resource profile 0
+23/04/08 19:56:30 DEBUG TaskSetManager: Epoch for TaskSet 0.0: 0
+23/04/08 19:56:30 DEBUG TaskSetManager: Adding pending tasks took 2 ms
+23/04/08 19:56:30 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+23/04/08 19:56:30 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_0.0, runningTasks: 0
+23/04/08 19:56:30 DEBUG TaskSetManager: Valid locality levels for TaskSet 0.0: NO_PREF, ANY
+23/04/08 19:56:30 INFO TaskSetManager: Starting task 0.0 in stage 0.0 (TID 0) (172.20.177.66, executor driver, partition 0, PROCESS_LOCAL, 4678 bytes) taskResourceAssignments Map()
+23/04/08 19:56:30 DEBUG TaskSetManager: No tasks for locality level NO_PREF, so moving to locality level ANY
+23/04/08 19:56:30 INFO Executor: Running task 0.0 in stage 0.0 (TID 0)
+23/04/08 19:56:30 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 1
+23/04/08 19:56:30 DEBUG BlockManager: Getting local block broadcast_0
+23/04/08 19:56:30 DEBUG BlockManager: Level for block broadcast_0 is StorageLevel(disk, memory, deserialized, 1 replicas)
+23/04/08 19:56:30 DEBUG GenerateSafeProjection: code for createexternalrow(input[0, bigint, false], input[1, bigint, false], input[2, string, false].toString, input[3, string, false].toString, input[4, string, false].toString, StructField(user_id,LongType,false), StructField(item_id,LongType,false), StructField(behavior,StringType,false), StructField(dt,StringType,false), StructField(hh,StringType,false)):
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificSafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificSafeProjection extends org.apache.spark.sql.catalyst.expressions.codegen.BaseProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private InternalRow mutableRow;
+/* 009 */
+/* 010 */
+/* 011 */   public SpecificSafeProjection(Object[] references) {
+/* 012 */     this.references = references;
+/* 013 */     mutableRow = (InternalRow) references[references.length - 1];
+/* 014 */
+/* 015 */   }
+/* 016 */
+/* 017 */   public void initialize(int partitionIndex) {
+/* 018 */
+/* 019 */   }
+/* 020 */
+/* 021 */   public java.lang.Object apply(java.lang.Object _i) {
+/* 022 */     InternalRow i = (InternalRow) _i;
+/* 023 */     org.apache.spark.sql.Row value_9 = CreateExternalRow_0(i);
+/* 024 */     if (false) {
+/* 025 */       mutableRow.setNullAt(0);
+/* 026 */     } else {
+/* 027 */
+/* 028 */       mutableRow.update(0, value_9);
+/* 029 */     }
+/* 030 */
+/* 031 */     return mutableRow;
+/* 032 */   }
+/* 033 */
+/* 034 */
+/* 035 */   private org.apache.spark.sql.Row CreateExternalRow_0(InternalRow i) {
+/* 036 */     Object[] values_0 = new Object[5];
+/* 037 */
+/* 038 */     long value_1 = i.getLong(0);
+/* 039 */     if (false) {
+/* 040 */       values_0[0] = null;
+/* 041 */     } else {
+/* 042 */       values_0[0] = value_1;
+/* 043 */     }
+/* 044 */
+/* 045 */     long value_2 = i.getLong(1);
+/* 046 */     if (false) {
+/* 047 */       values_0[1] = null;
+/* 048 */     } else {
+/* 049 */       values_0[1] = value_2;
+/* 050 */     }
+/* 051 */
+/* 052 */     UTF8String value_4 = i.getUTF8String(2);
+/* 053 */     boolean isNull_3 = true;
+/* 054 */     java.lang.String value_3 = null;
+/* 055 */     isNull_3 = false;
+/* 056 */     if (!isNull_3) {
+/* 057 */
+/* 058 */       Object funcResult_0 = null;
+/* 059 */       funcResult_0 = value_4.toString();
+/* 060 */       value_3 = (java.lang.String) funcResult_0;
+/* 061 */
+/* 062 */     }
+/* 063 */     if (isNull_3) {
+/* 064 */       values_0[2] = null;
+/* 065 */     } else {
+/* 066 */       values_0[2] = value_3;
+/* 067 */     }
+/* 068 */
+/* 069 */     UTF8String value_6 = i.getUTF8String(3);
+/* 070 */     boolean isNull_5 = true;
+/* 071 */     java.lang.String value_5 = null;
+/* 072 */     isNull_5 = false;
+/* 073 */     if (!isNull_5) {
+/* 074 */
+/* 075 */       Object funcResult_1 = null;
+/* 076 */       funcResult_1 = value_6.toString();
+/* 077 */       value_5 = (java.lang.String) funcResult_1;
+/* 078 */
+/* 079 */     }
+/* 080 */     if (isNull_5) {
+/* 081 */       values_0[3] = null;
+/* 082 */     } else {
+/* 083 */       values_0[3] = value_5;
+/* 084 */     }
+/* 085 */
+/* 086 */     UTF8String value_8 = i.getUTF8String(4);
+/* 087 */     boolean isNull_7 = true;
+/* 088 */     java.lang.String value_7 = null;
+/* 089 */     isNull_7 = false;
+/* 090 */     if (!isNull_7) {
+/* 091 */
+/* 092 */       Object funcResult_2 = null;
+/* 093 */       funcResult_2 = value_8.toString();
+/* 094 */       value_7 = (java.lang.String) funcResult_2;
+/* 095 */
+/* 096 */     }
+/* 097 */     if (isNull_7) {
+/* 098 */       values_0[4] = null;
+/* 099 */     } else {
+/* 100 */       values_0[4] = value_7;
+/* 101 */     }
+/* 102 */
+/* 103 */     final org.apache.spark.sql.Row value_0 = new org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema(values_0, ((org.apache.spark.sql.types.StructType) references[0] /* schema */));
+/* 104 */
+/* 105 */     return value_0;
+/* 106 */   }
+/* 107 */
+/* 108 */ }
+
+23/04/08 19:56:30 DEBUG CodeGenerator:
+/* 001 */ public java.lang.Object generate(Object[] references) {
+/* 002 */   return new SpecificSafeProjection(references);
+/* 003 */ }
+/* 004 */
+/* 005 */ class SpecificSafeProjection extends org.apache.spark.sql.catalyst.expressions.codegen.BaseProjection {
+/* 006 */
+/* 007 */   private Object[] references;
+/* 008 */   private InternalRow mutableRow;
+/* 009 */
+/* 010 */
+/* 011 */   public SpecificSafeProjection(Object[] references) {
+/* 012 */     this.references = references;
+/* 013 */     mutableRow = (InternalRow) references[references.length - 1];
+/* 014 */
+/* 015 */   }
+/* 016 */
+/* 017 */   public void initialize(int partitionIndex) {
+/* 018 */
+/* 019 */   }
+/* 020 */
+/* 021 */   public java.lang.Object apply(java.lang.Object _i) {
+/* 022 */     InternalRow i = (InternalRow) _i;
+/* 023 */     org.apache.spark.sql.Row value_9 = CreateExternalRow_0(i);
+/* 024 */     if (false) {
+/* 025 */       mutableRow.setNullAt(0);
+/* 026 */     } else {
+/* 027 */
+/* 028 */       mutableRow.update(0, value_9);
+/* 029 */     }
+/* 030 */
+/* 031 */     return mutableRow;
+/* 032 */   }
+/* 033 */
+/* 034 */
+/* 035 */   private org.apache.spark.sql.Row CreateExternalRow_0(InternalRow i) {
+/* 036 */     Object[] values_0 = new Object[5];
+/* 037 */
+/* 038 */     long value_1 = i.getLong(0);
+/* 039 */     if (false) {
+/* 040 */       values_0[0] = null;
+/* 041 */     } else {
+/* 042 */       values_0[0] = value_1;
+/* 043 */     }
+/* 044 */
+/* 045 */     long value_2 = i.getLong(1);
+/* 046 */     if (false) {
+/* 047 */       values_0[1] = null;
+/* 048 */     } else {
+/* 049 */       values_0[1] = value_2;
+/* 050 */     }
+/* 051 */
+/* 052 */     UTF8String value_4 = i.getUTF8String(2);
+/* 053 */     boolean isNull_3 = true;
+/* 054 */     java.lang.String value_3 = null;
+/* 055 */     isNull_3 = false;
+/* 056 */     if (!isNull_3) {
+/* 057 */
+/* 058 */       Object funcResult_0 = null;
+/* 059 */       funcResult_0 = value_4.toString();
+/* 060 */       value_3 = (java.lang.String) funcResult_0;
+/* 061 */
+/* 062 */     }
+/* 063 */     if (isNull_3) {
+/* 064 */       values_0[2] = null;
+/* 065 */     } else {
+/* 066 */       values_0[2] = value_3;
+/* 067 */     }
+/* 068 */
+/* 069 */     UTF8String value_6 = i.getUTF8String(3);
+/* 070 */     boolean isNull_5 = true;
+/* 071 */     java.lang.String value_5 = null;
+/* 072 */     isNull_5 = false;
+/* 073 */     if (!isNull_5) {
+/* 074 */
+/* 075 */       Object funcResult_1 = null;
+/* 076 */       funcResult_1 = value_6.toString();
+/* 077 */       value_5 = (java.lang.String) funcResult_1;
+/* 078 */
+/* 079 */     }
+/* 080 */     if (isNull_5) {
+/* 081 */       values_0[3] = null;
+/* 082 */     } else {
+/* 083 */       values_0[3] = value_5;
+/* 084 */     }
+/* 085 */
+/* 086 */     UTF8String value_8 = i.getUTF8String(4);
+/* 087 */     boolean isNull_7 = true;
+/* 088 */     java.lang.String value_7 = null;
+/* 089 */     isNull_7 = false;
+/* 090 */     if (!isNull_7) {
+/* 091 */
+/* 092 */       Object funcResult_2 = null;
+/* 093 */       funcResult_2 = value_8.toString();
+/* 094 */       value_7 = (java.lang.String) funcResult_2;
+/* 095 */
+/* 096 */     }
+/* 097 */     if (isNull_7) {
+/* 098 */       values_0[4] = null;
+/* 099 */     } else {
+/* 100 */       values_0[4] = value_7;
+/* 101 */     }
+/* 102 */
+/* 103 */     final org.apache.spark.sql.Row value_0 = new org.apache.spark.sql.catalyst.expressions.GenericRowWithSchema(values_0, ((org.apache.spark.sql.types.StructType) references[0] /* schema */));
+/* 104 */
+/* 105 */     return value_0;
+/* 106 */   }
+/* 107 */
+/* 108 */ }
+
+23/04/08 19:56:30 INFO CodeGenerator: Code generated in 34.183904 ms
+23/04/08 19:56:31 DEBUG CompileUtils: Compiling: Projection$6
+
+ Code:
+
+public class Projection$6 implements org.apache.paimon.codegen.Projection<org.apache.paimon.data.InternalRow, org.apache.paimon.data.BinaryRow> {
+
+  org.apache.paimon.data.BinaryRow out = new org.apache.paimon.data.BinaryRow(5);
+org.apache.paimon.data.BinaryRowWriter outWriter = new org.apache.paimon.data.BinaryRowWriter(out);
+
+  public Projection$6(Object[] references) throws Exception {
+
+  }
+
+  @Override
+  public org.apache.paimon.data.BinaryRow apply(org.apache.paimon.data.InternalRow in1) {
+    long field$7;
+boolean isNull$7;
+long field$8;
+boolean isNull$8;
+org.apache.paimon.data.BinaryString field$9;
+boolean isNull$9;
+org.apache.paimon.data.BinaryString field$10;
+boolean isNull$10;
+org.apache.paimon.data.BinaryString field$11;
+boolean isNull$11;
+
+
+
+
+outWriter.reset();
+
+isNull$7 = in1.isNullAt(0);
+field$7 = -1L;
+if (!isNull$7) {
+  field$7 = in1.getLong(0);
+}
+if (isNull$7) {
+  outWriter.setNullAt(0);
+} else {
+  outWriter.writeLong(0, field$7);
+}
+
+
+isNull$8 = in1.isNullAt(1);
+field$8 = -1L;
+if (!isNull$8) {
+  field$8 = in1.getLong(1);
+}
+if (isNull$8) {
+  outWriter.setNullAt(1);
+} else {
+  outWriter.writeLong(1, field$8);
+}
+
+
+isNull$9 = in1.isNullAt(2);
+field$9 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$9) {
+  field$9 = ((org.apache.paimon.data.BinaryString) in1.getString(2));
+}
+if (isNull$9) {
+  outWriter.setNullAt(2);
+} else {
+  outWriter.writeString(2, field$9);
+}
+
+
+isNull$10 = in1.isNullAt(3);
+field$10 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$10) {
+  field$10 = ((org.apache.paimon.data.BinaryString) in1.getString(3));
+}
+if (isNull$10) {
+  outWriter.setNullAt(3);
+} else {
+  outWriter.writeString(3, field$10);
+}
+
+
+isNull$11 = in1.isNullAt(4);
+field$11 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$11) {
+  field$11 = ((org.apache.paimon.data.BinaryString) in1.getString(4));
+}
+if (isNull$11) {
+  outWriter.setNullAt(4);
+} else {
+  outWriter.writeString(4, field$11);
+}
+
+outWriter.complete();
+
+
+    return out;
+  }
+}
+
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: Projection$12
+
+ Code:
+
+public class Projection$12 implements org.apache.paimon.codegen.Projection<org.apache.paimon.data.InternalRow, org.apache.paimon.data.BinaryRow> {
+
+  org.apache.paimon.data.BinaryRow out = new org.apache.paimon.data.BinaryRow(1);
+org.apache.paimon.data.BinaryRowWriter outWriter = new org.apache.paimon.data.BinaryRowWriter(out);
+
+  public Projection$12(Object[] references) throws Exception {
+
+  }
+
+  @Override
+  public org.apache.paimon.data.BinaryRow apply(org.apache.paimon.data.InternalRow in1) {
+    long field$13;
+boolean isNull$13;
+
+
+
+
+outWriter.reset();
+
+isNull$13 = in1.isNullAt(0);
+field$13 = -1L;
+if (!isNull$13) {
+  field$13 = in1.getLong(0);
+}
+if (isNull$13) {
+  outWriter.setNullAt(0);
+} else {
+  outWriter.writeLong(0, field$13);
+}
+
+outWriter.complete();
+
+
+    return out;
+  }
+}
+
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: Projection$14
+
+ Code:
+
+public class Projection$14 implements org.apache.paimon.codegen.Projection<org.apache.paimon.data.InternalRow, org.apache.paimon.data.BinaryRow> {
+
+  org.apache.paimon.data.BinaryRow out = new org.apache.paimon.data.BinaryRow(2);
+org.apache.paimon.data.BinaryRowWriter outWriter = new org.apache.paimon.data.BinaryRowWriter(out);
+
+  public Projection$14(Object[] references) throws Exception {
+
+  }
+
+  @Override
+  public org.apache.paimon.data.BinaryRow apply(org.apache.paimon.data.InternalRow in1) {
+    org.apache.paimon.data.BinaryString field$15;
+boolean isNull$15;
+org.apache.paimon.data.BinaryString field$16;
+boolean isNull$16;
+
+
+
+
+outWriter.reset();
+
+isNull$15 = in1.isNullAt(3);
+field$15 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$15) {
+  field$15 = ((org.apache.paimon.data.BinaryString) in1.getString(3));
+}
+if (isNull$15) {
+  outWriter.setNullAt(0);
+} else {
+  outWriter.writeString(0, field$15);
+}
+
+
+isNull$16 = in1.isNullAt(4);
+field$16 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$16) {
+  field$16 = ((org.apache.paimon.data.BinaryString) in1.getString(4));
+}
+if (isNull$16) {
+  outWriter.setNullAt(1);
+} else {
+  outWriter.writeString(1, field$16);
+}
+
+outWriter.complete();
+
+
+    return out;
+  }
+}
+
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: Projection$17
+
+ Code:
+
+public class Projection$17 implements org.apache.paimon.codegen.Projection<org.apache.paimon.data.InternalRow, org.apache.paimon.data.BinaryRow> {
+
+  org.apache.paimon.data.BinaryRow out = new org.apache.paimon.data.BinaryRow(1);
+org.apache.paimon.data.BinaryRowWriter outWriter = new org.apache.paimon.data.BinaryRowWriter(out);
+
+  public Projection$17(Object[] references) throws Exception {
+
+  }
+
+  @Override
+  public org.apache.paimon.data.BinaryRow apply(org.apache.paimon.data.InternalRow in1) {
+    long field$18;
+boolean isNull$18;
+
+
+
+
+outWriter.reset();
+
+isNull$18 = in1.isNullAt(0);
+field$18 = -1L;
+if (!isNull$18) {
+  field$18 = in1.getLong(0);
+}
+if (isNull$18) {
+  outWriter.setNullAt(0);
+} else {
+  outWriter.writeLong(0, field$18);
+}
+
+outWriter.complete();
+
+
+    return out;
+  }
+}
+
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: Projection$19
+
+ Code:
+
+public class Projection$19 implements org.apache.paimon.codegen.Projection<org.apache.paimon.data.InternalRow, org.apache.paimon.data.BinaryRow> {
+
+  org.apache.paimon.data.BinaryRow out = new org.apache.paimon.data.BinaryRow(3);
+org.apache.paimon.data.BinaryRowWriter outWriter = new org.apache.paimon.data.BinaryRowWriter(out);
+
+  public Projection$19(Object[] references) throws Exception {
+
+  }
+
+  @Override
+  public org.apache.paimon.data.BinaryRow apply(org.apache.paimon.data.InternalRow in1) {
+    org.apache.paimon.data.BinaryString field$20;
+boolean isNull$20;
+org.apache.paimon.data.BinaryString field$21;
+boolean isNull$21;
+long field$22;
+boolean isNull$22;
+
+
+
+
+outWriter.reset();
+
+isNull$20 = in1.isNullAt(3);
+field$20 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$20) {
+  field$20 = ((org.apache.paimon.data.BinaryString) in1.getString(3));
+}
+if (isNull$20) {
+  outWriter.setNullAt(0);
+} else {
+  outWriter.writeString(0, field$20);
+}
+
+
+isNull$21 = in1.isNullAt(4);
+field$21 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$21) {
+  field$21 = ((org.apache.paimon.data.BinaryString) in1.getString(4));
+}
+if (isNull$21) {
+  outWriter.setNullAt(1);
+} else {
+  outWriter.writeString(1, field$21);
+}
+
+
+isNull$22 = in1.isNullAt(0);
+field$22 = -1L;
+if (!isNull$22) {
+  field$22 = in1.getLong(0);
+}
+if (isNull$22) {
+  outWriter.setNullAt(2);
+} else {
+  outWriter.writeLong(2, field$22);
+}
+
+outWriter.complete();
+
+
+    return out;
+  }
+}
+
+23/04/08 19:56:32 DEBUG LocalDiskShuffleMapOutputWriter: Writing shuffle index file for mapId 0 with length 1
+23/04/08 19:56:32 DEBUG IndexShuffleBlockResolver: Shuffle index for mapId 0: [867]
+23/04/08 19:56:32 INFO Executor: Finished task 0.0 in stage 0.0 (TID 0). 1385 bytes result sent to driver
+23/04/08 19:56:32 DEBUG ExecutorMetricsPoller: stageTCMP: (0, 0) -> 0
+23/04/08 19:56:32 INFO TaskSetManager: Finished task 0.0 in stage 0.0 (TID 0) in 1606 ms on 172.20.177.66 (executor driver) (1/1)
+23/04/08 19:56:32 INFO TaskSchedulerImpl: Removed TaskSet 0.0, whose tasks have all completed, from pool
+23/04/08 19:56:32 DEBUG DAGScheduler: ShuffleMapTask finished on driver
+23/04/08 19:56:32 INFO DAGScheduler: ShuffleMapStage 0 (groupBy at SparkWrite.java:59) finished in 1.881 s
+23/04/08 19:56:32 INFO DAGScheduler: looking for newly runnable stages
+23/04/08 19:56:32 INFO DAGScheduler: running: Set()
+23/04/08 19:56:32 INFO DAGScheduler: waiting: Set(ResultStage 1)
+23/04/08 19:56:32 INFO DAGScheduler: failed: Set()
+23/04/08 19:56:32 DEBUG MapOutputTrackerMaster: Increasing epoch to 1
+23/04/08 19:56:32 DEBUG DAGScheduler: submitStage(ResultStage 1 (name=reduce at SparkWrite.java:62;jobs=0))
+23/04/08 19:56:32 DEBUG DAGScheduler: missing: List()
+23/04/08 19:56:32 INFO DAGScheduler: Submitting ResultStage 1 (MapPartitionsRDD[9] at values at SparkWrite.java:61), which has no missing parents
+23/04/08 19:56:32 DEBUG DAGScheduler: submitMissingTasks(ResultStage 1)
+23/04/08 19:56:32 INFO MemoryStore: Block broadcast_1 stored as values in memory (estimated size 16.9 KiB, free 366.3 MiB)
+23/04/08 19:56:32 DEBUG BlockManager: Put block broadcast_1 locally took 2 ms
+23/04/08 19:56:32 DEBUG BlockManager: Putting block broadcast_1 without replication took 2 ms
+23/04/08 19:56:32 INFO MemoryStore: Block broadcast_1_piece0 stored as bytes in memory (estimated size 8.5 KiB, free 366.3 MiB)
+23/04/08 19:56:32 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_1_piece0 for BlockManagerId(driver, 172.20.177.66, 36297, None)
+23/04/08 19:56:32 INFO BlockManagerInfo: Added broadcast_1_piece0 in memory on 172.20.177.66:36297 (size: 8.5 KiB, free: 366.3 MiB)
+23/04/08 19:56:32 DEBUG BlockManagerMaster: Updated info of block broadcast_1_piece0
+23/04/08 19:56:32 DEBUG BlockManager: Told master about block broadcast_1_piece0
+23/04/08 19:56:32 DEBUG BlockManager: Put block broadcast_1_piece0 locally took 2 ms
+23/04/08 19:56:32 DEBUG BlockManager: Putting block broadcast_1_piece0 without replication took 2 ms
+23/04/08 19:56:32 INFO SparkContext: Created broadcast 1 from broadcast at DAGScheduler.scala:1478
+23/04/08 19:56:32 INFO DAGScheduler: Submitting 1 missing tasks from ResultStage 1 (MapPartitionsRDD[9] at values at SparkWrite.java:61) (first 15 tasks are for partitions Vector(0))
+23/04/08 19:56:32 INFO TaskSchedulerImpl: Adding task set 1.0 with 1 tasks resource profile 0
+23/04/08 19:56:32 DEBUG TaskSetManager: Epoch for TaskSet 1.0: 1
+23/04/08 19:56:32 DEBUG TaskSetManager: Adding pending tasks took 3 ms
+23/04/08 19:56:32 DEBUG TaskSetManager: Valid locality levels for TaskSet 1.0: NODE_LOCAL, ANY
+23/04/08 19:56:32 DEBUG TaskSchedulerImpl: parentName: , name: TaskSet_1.0, runningTasks: 0
+23/04/08 19:56:32 INFO TaskSetManager: Starting task 0.0 in stage 1.0 (TID 1) (172.20.177.66, executor driver, partition 0, NODE_LOCAL, 4271 bytes) taskResourceAssignments Map()
+23/04/08 19:56:32 DEBUG TaskSetManager: No tasks for locality level NODE_LOCAL, so moving to locality level ANY
+23/04/08 19:56:32 INFO Executor: Running task 0.0 in stage 1.0 (TID 1)
+23/04/08 19:56:32 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 1
+23/04/08 19:56:32 DEBUG BlockManager: Getting local block broadcast_1
+23/04/08 19:56:32 DEBUG BlockManager: Level for block broadcast_1 is StorageLevel(disk, memory, deserialized, 1 replicas)
+23/04/08 19:56:32 DEBUG MapOutputTrackerMaster: Fetching outputs for shuffle 0
+23/04/08 19:56:32 DEBUG MapOutputTrackerMaster: Convert map statuses for shuffle 0, mappers 0-1, partitions 0-1
+23/04/08 19:56:32 DEBUG ShuffleBlockFetcherIterator: maxBytesInFlight: 50331648, targetRemoteRequestSize: 10066329, maxBlocksInFlightPerAddress: 2147483647
+23/04/08 19:56:32 INFO ShuffleBlockFetcherIterator: Getting 1 (868.0 B) non-empty blocks including 1 (868.0 B) local and 0 (0.0 B) host-local and 0 (0.0 B) push-merged-local and 0 (0.0 B) remote blocks
+23/04/08 19:56:32 INFO ShuffleBlockFetcherIterator: Started 0 remote fetches in 16 ms
+23/04/08 19:56:32 DEBUG ShuffleBlockFetcherIterator: Start fetching local blocks: (shuffle_0_0_0,0)
+23/04/08 19:56:32 DEBUG BlockManager: Getting local shuffle block shuffle_0_0_0
+23/04/08 19:56:32 DEBUG ShuffleBlockFetcherIterator: Got local blocks in 21 ms
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: Projection$29
+
+ Code:
+
+public class Projection$29 implements org.apache.paimon.codegen.Projection<org.apache.paimon.data.InternalRow, org.apache.paimon.data.BinaryRow> {
+
+  org.apache.paimon.data.BinaryRow out = new org.apache.paimon.data.BinaryRow(5);
+org.apache.paimon.data.BinaryRowWriter outWriter = new org.apache.paimon.data.BinaryRowWriter(out);
+
+  public Projection$29(Object[] references) throws Exception {
+
+  }
+
+  @Override
+  public org.apache.paimon.data.BinaryRow apply(org.apache.paimon.data.InternalRow in1) {
+    long field$30;
+boolean isNull$30;
+long field$31;
+boolean isNull$31;
+org.apache.paimon.data.BinaryString field$32;
+boolean isNull$32;
+org.apache.paimon.data.BinaryString field$33;
+boolean isNull$33;
+org.apache.paimon.data.BinaryString field$34;
+boolean isNull$34;
+
+
+
+
+outWriter.reset();
+
+isNull$30 = in1.isNullAt(0);
+field$30 = -1L;
+if (!isNull$30) {
+  field$30 = in1.getLong(0);
+}
+if (isNull$30) {
+  outWriter.setNullAt(0);
+} else {
+  outWriter.writeLong(0, field$30);
+}
+
+
+isNull$31 = in1.isNullAt(1);
+field$31 = -1L;
+if (!isNull$31) {
+  field$31 = in1.getLong(1);
+}
+if (isNull$31) {
+  outWriter.setNullAt(1);
+} else {
+  outWriter.writeLong(1, field$31);
+}
+
+
+isNull$32 = in1.isNullAt(2);
+field$32 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$32) {
+  field$32 = ((org.apache.paimon.data.BinaryString) in1.getString(2));
+}
+if (isNull$32) {
+  outWriter.setNullAt(2);
+} else {
+  outWriter.writeString(2, field$32);
+}
+
+
+isNull$33 = in1.isNullAt(3);
+field$33 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$33) {
+  field$33 = ((org.apache.paimon.data.BinaryString) in1.getString(3));
+}
+if (isNull$33) {
+  outWriter.setNullAt(3);
+} else {
+  outWriter.writeString(3, field$33);
+}
+
+
+isNull$34 = in1.isNullAt(4);
+field$34 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$34) {
+  field$34 = ((org.apache.paimon.data.BinaryString) in1.getString(4));
+}
+if (isNull$34) {
+  outWriter.setNullAt(4);
+} else {
+  outWriter.writeString(4, field$34);
+}
+
+outWriter.complete();
+
+
+    return out;
+  }
+}
+
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: Projection$35
+
+ Code:
+
+public class Projection$35 implements org.apache.paimon.codegen.Projection<org.apache.paimon.data.InternalRow, org.apache.paimon.data.BinaryRow> {
+
+  org.apache.paimon.data.BinaryRow out = new org.apache.paimon.data.BinaryRow(1);
+org.apache.paimon.data.BinaryRowWriter outWriter = new org.apache.paimon.data.BinaryRowWriter(out);
+
+  public Projection$35(Object[] references) throws Exception {
+
+  }
+
+  @Override
+  public org.apache.paimon.data.BinaryRow apply(org.apache.paimon.data.InternalRow in1) {
+    long field$36;
+boolean isNull$36;
+
+
+
+
+outWriter.reset();
+
+isNull$36 = in1.isNullAt(0);
+field$36 = -1L;
+if (!isNull$36) {
+  field$36 = in1.getLong(0);
+}
+if (isNull$36) {
+  outWriter.setNullAt(0);
+} else {
+  outWriter.writeLong(0, field$36);
+}
+
+outWriter.complete();
+
+
+    return out;
+  }
+}
+
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: Projection$37
+
+ Code:
+
+public class Projection$37 implements org.apache.paimon.codegen.Projection<org.apache.paimon.data.InternalRow, org.apache.paimon.data.BinaryRow> {
+
+  org.apache.paimon.data.BinaryRow out = new org.apache.paimon.data.BinaryRow(2);
+org.apache.paimon.data.BinaryRowWriter outWriter = new org.apache.paimon.data.BinaryRowWriter(out);
+
+  public Projection$37(Object[] references) throws Exception {
+
+  }
+
+  @Override
+  public org.apache.paimon.data.BinaryRow apply(org.apache.paimon.data.InternalRow in1) {
+    org.apache.paimon.data.BinaryString field$38;
+boolean isNull$38;
+org.apache.paimon.data.BinaryString field$39;
+boolean isNull$39;
+
+
+
+
+outWriter.reset();
+
+isNull$38 = in1.isNullAt(3);
+field$38 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$38) {
+  field$38 = ((org.apache.paimon.data.BinaryString) in1.getString(3));
+}
+if (isNull$38) {
+  outWriter.setNullAt(0);
+} else {
+  outWriter.writeString(0, field$38);
+}
+
+
+isNull$39 = in1.isNullAt(4);
+field$39 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$39) {
+  field$39 = ((org.apache.paimon.data.BinaryString) in1.getString(4));
+}
+if (isNull$39) {
+  outWriter.setNullAt(1);
+} else {
+  outWriter.writeString(1, field$39);
+}
+
+outWriter.complete();
+
+
+    return out;
+  }
+}
+
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: Projection$40
+
+ Code:
+
+public class Projection$40 implements org.apache.paimon.codegen.Projection<org.apache.paimon.data.InternalRow, org.apache.paimon.data.BinaryRow> {
+
+  org.apache.paimon.data.BinaryRow out = new org.apache.paimon.data.BinaryRow(1);
+org.apache.paimon.data.BinaryRowWriter outWriter = new org.apache.paimon.data.BinaryRowWriter(out);
+
+  public Projection$40(Object[] references) throws Exception {
+
+  }
+
+  @Override
+  public org.apache.paimon.data.BinaryRow apply(org.apache.paimon.data.InternalRow in1) {
+    long field$41;
+boolean isNull$41;
+
+
+
+
+outWriter.reset();
+
+isNull$41 = in1.isNullAt(0);
+field$41 = -1L;
+if (!isNull$41) {
+  field$41 = in1.getLong(0);
+}
+if (isNull$41) {
+  outWriter.setNullAt(0);
+} else {
+  outWriter.writeLong(0, field$41);
+}
+
+outWriter.complete();
+
+
+    return out;
+  }
+}
+
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: Projection$42
+
+ Code:
+
+public class Projection$42 implements org.apache.paimon.codegen.Projection<org.apache.paimon.data.InternalRow, org.apache.paimon.data.BinaryRow> {
+
+  org.apache.paimon.data.BinaryRow out = new org.apache.paimon.data.BinaryRow(3);
+org.apache.paimon.data.BinaryRowWriter outWriter = new org.apache.paimon.data.BinaryRowWriter(out);
+
+  public Projection$42(Object[] references) throws Exception {
+
+  }
+
+  @Override
+  public org.apache.paimon.data.BinaryRow apply(org.apache.paimon.data.InternalRow in1) {
+    org.apache.paimon.data.BinaryString field$43;
+boolean isNull$43;
+org.apache.paimon.data.BinaryString field$44;
+boolean isNull$44;
+long field$45;
+boolean isNull$45;
+
+
+
+
+outWriter.reset();
+
+isNull$43 = in1.isNullAt(3);
+field$43 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$43) {
+  field$43 = ((org.apache.paimon.data.BinaryString) in1.getString(3));
+}
+if (isNull$43) {
+  outWriter.setNullAt(0);
+} else {
+  outWriter.writeString(0, field$43);
+}
+
+
+isNull$44 = in1.isNullAt(4);
+field$44 = org.apache.paimon.data.BinaryString.EMPTY_UTF8;
+if (!isNull$44) {
+  field$44 = ((org.apache.paimon.data.BinaryString) in1.getString(4));
+}
+if (isNull$44) {
+  outWriter.setNullAt(1);
+} else {
+  outWriter.writeString(1, field$44);
+}
+
+
+isNull$45 = in1.isNullAt(0);
+field$45 = -1L;
+if (!isNull$45) {
+  field$45 = in1.getLong(0);
+}
+if (isNull$45) {
+  outWriter.setNullAt(2);
+} else {
+  outWriter.writeLong(2, field$45);
+}
+
+outWriter.complete();
+
+
+    return out;
+  }
+}
+
+23/04/08 19:56:32 DEBUG AbstractFileStoreWrite: Creating writer for partition org.apache.paimon.data.BinaryRow@16592de9, bucket 0
+23/04/08 19:56:32 DEBUG KeyValueFileStoreWrite: Creating merge tree writer for partition org.apache.paimon.data.BinaryRow@16592de9 bucket 0 from restored files [{data-abc81c4e-5c2a-4605-a2f8-8b30880912b3-0.orc, 830, 1, org.apache.paimon.data.BinaryRow@5759f99e, org.apache.paimon.data.BinaryRow@5759f99e, org.apache.paimon.stats.BinaryTableStats@7ca7b8be, org.apache.paimon.stats.BinaryTableStats@35f9569e, 0, 0, 0, 0, [], 2023-04-08T11:47:39.592}]
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: KeyComparator$23
+
+ Code:
+
+      public class KeyComparator$23 implements org.apache.paimon.codegen.RecordComparator {
+
+        private final Object[] references;
+
+
+        public KeyComparator$23(Object[] references) {
+          this.references = references;
+
+        }
+
+        @Override
+        public int compare(org.apache.paimon.data.InternalRow o1, org.apache.paimon.data.InternalRow o2) {
+
+boolean isNullA$25 = o1.isNullAt(0);
+boolean isNullB$27 = o2.isNullAt(0);
+if (isNullA$25 && isNullB$27) {
+  // Continue to compare the next element
+} else if (isNullA$25) {
+  return -1;
+} else if (isNullB$27) {
+  return 1;
+} else {
+  long fieldA$24 = o1.getLong(0);
+  long fieldB$26 = o2.getLong(0);
+  int comp$28 = (fieldA$24 > fieldB$26 ? 1 : fieldA$24 < fieldB$26 ? -1 : 0);
+  if (comp$28 != 0) {
+    return comp$28;
+  }
+}
+
+          return 0;
+        }
+
+      }
+
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: MemTableKeyComputer$46
+
+ Code:
+
+      public class MemTableKeyComputer$46 implements org.apache.paimon.codegen.NormalizedKeyComputer {
+
+        public MemTableKeyComputer$46(Object[] references) {
+          // useless
+        }
+
+        @Override
+        public void putKey(org.apache.paimon.data.InternalRow record, org.apache.paimon.memory.MemorySegment target, int offset) {
+
+if (record.isNullAt(0)) {
+ org.apache.paimon.utils.SortUtil.minNormalizedKey(target, offset+0, 9);
+} else {
+
+target.put(offset+0, (byte) 1);
+org.apache.paimon.utils.SortUtil.putLongNormalizedKey(
+  record.getLong(0), target, offset+1, 8);
+
+
+}
+
+if (record.isNullAt(1)) {
+ org.apache.paimon.utils.SortUtil.minNormalizedKey(target, offset+9, 9);
+} else {
+
+target.put(offset+9, (byte) 1);
+org.apache.paimon.utils.SortUtil.putLongNormalizedKey(
+  record.getLong(1), target, offset+10, 8);
+
+
+}
+
+
+target.putLong(offset+0,
+  Long.reverseBytes(target.getLong(offset+0)));
+
+target.putLong(offset+8,
+  Long.reverseBytes(target.getLong(offset+8)));
+
+target.putShort(offset+16,
+  Short.reverseBytes(target.getShort(offset+16)));
+
+        }
+
+        @Override
+        public int compareKey(org.apache.paimon.memory.MemorySegment segI, int offsetI, org.apache.paimon.memory.MemorySegment segJ, int offsetJ) {
+
+long l_0_1 = segI.getLong(offsetI+0);
+long l_0_2 = segJ.getLong(offsetJ+0);
+if (l_0_1 != l_0_2) {
+  return ((l_0_1 < l_0_2) ^ (l_0_1 < 0) ^
+    (l_0_2 < 0) ? -1 : 1);
+}
+
+long l_1_1 = segI.getLong(offsetI+8);
+long l_1_2 = segJ.getLong(offsetJ+8);
+if (l_1_1 != l_1_2) {
+  return ((l_1_1 < l_1_2) ^ (l_1_1 < 0) ^
+    (l_1_2 < 0) ? -1 : 1);
+}
+
+short l_2_1 = segI.getShort(offsetI+16);
+short l_2_2 = segJ.getShort(offsetJ+16);
+if (l_2_1 != l_2_2) {
+  return ((l_2_1 < l_2_2) ^ (l_2_1 < 0) ^
+    (l_2_2 < 0) ? -1 : 1);
+}
+            return 0;
+        }
+
+        @Override
+        public void swapKey(org.apache.paimon.memory.MemorySegment segI, int offsetI, org.apache.paimon.memory.MemorySegment segJ, int offsetJ) {
+
+long temp0 = segI.getLong(offsetI+0);
+segI.putLong(offsetI+0, segJ.getLong(offsetJ+0));
+segJ.putLong(offsetJ+0, temp0);
+
+long temp1 = segI.getLong(offsetI+8);
+segI.putLong(offsetI+8, segJ.getLong(offsetJ+8));
+segJ.putLong(offsetJ+8, temp1);
+
+short temp2 = segI.getShort(offsetI+16);
+segI.putShort(offsetI+16, segJ.getShort(offsetJ+16));
+segJ.putShort(offsetJ+16, temp2);
+
+        }
+
+        @Override
+        public int getNumKeyBytes() {
+          return 18;
+        }
+
+        @Override
+        public boolean isKeyFullyDetermines() {
+          return true;
+        }
+
+        @Override
+        public boolean invertKey() {
+          return false;
+        }
+
+      }
+
+23/04/08 19:56:32 DEBUG CompileUtils: Compiling: MemTableComparator$47
+
+ Code:
+
+      public class MemTableComparator$47 implements org.apache.paimon.codegen.RecordComparator {
+
+        private final Object[] references;
+
+
+        public MemTableComparator$47(Object[] references) {
+          this.references = references;
+
+        }
+
+        @Override
+        public int compare(org.apache.paimon.data.InternalRow o1, org.apache.paimon.data.InternalRow o2) {
+
+boolean isNullA$49 = o1.isNullAt(0);
+boolean isNullB$51 = o2.isNullAt(0);
+if (isNullA$49 && isNullB$51) {
+  // Continue to compare the next element
+} else if (isNullA$49) {
+  return -1;
+} else if (isNullB$51) {
+  return 1;
+} else {
+  long fieldA$48 = o1.getLong(0);
+  long fieldB$50 = o2.getLong(0);
+  int comp$52 = (fieldA$48 > fieldB$50 ? 1 : fieldA$48 < fieldB$50 ? -1 : 0);
+  if (comp$52 != 0) {
+    return comp$52;
+  }
+}
+
+boolean isNullA$54 = o1.isNullAt(1);
+boolean isNullB$56 = o2.isNullAt(1);
+if (isNullA$54 && isNullB$56) {
+  // Continue to compare the next element
+} else if (isNullA$54) {
+  return -1;
+} else if (isNullB$56) {
+  return 1;
+} else {
+  long fieldA$53 = o1.getLong(1);
+  long fieldB$55 = o2.getLong(1);
+  int comp$57 = (fieldA$53 > fieldB$55 ? 1 : fieldA$53 < fieldB$55 ? -1 : 0);
+  if (comp$57 != 0) {
+    return comp$57;
+  }
+}
+
+          return 0;
+        }
+
+      }
+
+23/04/08 19:56:32 INFO MemoryManagerImpl: orc.rows.between.memory.checks=5000
+23/04/08 19:56:32 INFO OrcCodecPool: Got brand-new codec LZ4
+23/04/08 19:56:32 INFO WriterImpl: ORC writer created for path: 001cdb3c-8735-45da-975d-daefbff7cd5a with stripeSize: 67108864 blockSize: 268435456 compression: LZ4 bufferSize: 262144
+23/04/08 19:56:32 DEBUG KeyValueDataFileWriter: Write key value {kind: INSERT, seq: 1, key: (1), value: (1, 1, s, 2022-01-01, 03), level: -1}
+23/04/08 19:56:32 DEBUG SingleFileWriter: Closing file /tmp/default.db/my_table_p/dt=2022-01-01/hh=03/bucket-0/data-1ab3f3dc-625c-4c3c-9d9a-48bc70cd0389-0.orc
+23/04/08 19:56:33 DEBUG ContextCleaner: Got cleaning task CleanBroadcast(0)
+23/04/08 19:56:33 DEBUG ContextCleaner: Cleaning broadcast 0
+23/04/08 19:56:33 DEBUG TorrentBroadcast: Unpersisting TorrentBroadcast 0
+23/04/08 19:56:33 DEBUG BlockManagerStorageEndpoint: removing broadcast 0
+23/04/08 19:56:33 DEBUG BlockManager: Removing broadcast 0
+23/04/08 19:56:33 DEBUG BlockManager: Removing block broadcast_0_piece0
+23/04/08 19:56:33 DEBUG OrcCodecPool: Got recycled codec
+23/04/08 19:56:33 DEBUG MemoryStore: Block broadcast_0_piece0 of size 7852 dropped from memory (free 384052361)
+23/04/08 19:56:33 DEBUG BlockManagerMasterEndpoint: Updating block info on master broadcast_0_piece0 for BlockManagerId(driver, 172.20.177.66, 36297, None)
+23/04/08 19:56:33 INFO BlockManagerInfo: Removed broadcast_0_piece0 on 172.20.177.66:36297 in memory (size: 7.7 KiB, free: 366.3 MiB)
+23/04/08 19:56:33 DEBUG BlockManagerMaster: Updated info of block broadcast_0_piece0
+23/04/08 19:56:33 DEBUG BlockManager: Told master about block broadcast_0_piece0
+23/04/08 19:56:33 DEBUG BlockManager: Removing block broadcast_0
+23/04/08 19:56:33 DEBUG MemoryStore: Block broadcast_0 of size 15024 dropped from memory (free 384067385)
+23/04/08 19:56:33 DEBUG OrcCodecPool: Got recycled codec
+23/04/08 19:56:33 DEBUG BlockManagerStorageEndpoint: Done removing broadcast 0, response is 0
+23/04/08 19:56:33 DEBUG BlockManagerStorageEndpoint: Sent response: 0 to 172.20.177.66:40239
+23/04/08 19:56:33 DEBUG MergeTreeCompactManager: Trigger normal compaciton. Picking from the following runs
+[LevelSortedRun{level=0, run=[{data-1ab3f3dc-625c-4c3c-9d9a-48bc70cd0389-0.orc, 826, 1, org.apache.paimon.data.BinaryRow@5759f99e, org.apache.paimon.data.BinaryRow@5759f99e, org.apache.paimon.stats.BinaryTableStats@7ca7b8be, org.apache.paimon.stats.BinaryTableStats@35f9569e, 1, 1, 0, 0, [], 2023-04-08T11:56:33.130}]}, LevelSortedRun{level=0, run=[{data-abc81c4e-5c2a-4605-a2f8-8b30880912b3-0.orc, 830, 1, org.apache.paimon.data.BinaryRow@5759f99e, org.apache.paimon.data.BinaryRow@5759f99e, org.apache.paimon.stats.BinaryTableStats@7ca7b8be, org.apache.paimon.stats.BinaryTableStats@35f9569e, 0, 0, 0, 0, [], 2023-04-08T11:47:39.592}]}]
+23/04/08 19:56:33 DEBUG ContextCleaner: Cleaned broadcast 0
+23/04/08 19:56:33 DEBUG TaskMemoryManager: Task 1 release 0.0 B from org.apache.spark.util.collection.ExternalAppendOnlyMap@1d841caf
+23/04/08 19:56:33 INFO Executor: Finished task 0.0 in stage 1.0 (TID 1). 2408 bytes result sent to driver
+23/04/08 19:56:33 DEBUG ExecutorMetricsPoller: stageTCMP: (1, 0) -> 0
+23/04/08 19:56:33 INFO TaskSetManager: Finished task 0.0 in stage 1.0 (TID 1) in 955 ms on 172.20.177.66 (executor driver) (1/1)
+23/04/08 19:56:33 INFO TaskSchedulerImpl: Removed TaskSet 1.0, whose tasks have all completed, from pool
+23/04/08 19:56:33 INFO DAGScheduler: ResultStage 1 (reduce at SparkWrite.java:62) finished in 0.993 s
+23/04/08 19:56:33 DEBUG DAGScheduler: After removal of stage 1, remaining stages = 1
+23/04/08 19:56:33 DEBUG DAGScheduler: After removal of stage 0, remaining stages = 0
+23/04/08 19:56:33 INFO DAGScheduler: Job 0 is finished. Cancelling potential speculative or zombie tasks for this job
+23/04/08 19:56:33 INFO TaskSchedulerImpl: Killing all running tasks in stage 1: Stage finished
+23/04/08 19:56:33 INFO DAGScheduler: Job 0 finished: reduce at SparkWrite.java:62, took 3.013482 s
+23/04/08 19:56:33 DEBUG CompileUtils: Compiling: KeyComparator$58
+
+ Code:
+
+      public class KeyComparator$58 implements org.apache.paimon.codegen.RecordComparator {
+
+        private final Object[] references;
+
+
+        public KeyComparator$58(Object[] references) {
+          this.references = references;
+
+        }
+
+        @Override
+        public int compare(org.apache.paimon.data.InternalRow o1, org.apache.paimon.data.InternalRow o2) {
+
+boolean isNullA$60 = o1.isNullAt(0);
+boolean isNullB$62 = o2.isNullAt(0);
+if (isNullA$60 && isNullB$62) {
+  // Continue to compare the next element
+} else if (isNullA$60) {
+  return -1;
+} else if (isNullB$62) {
+  return 1;
+} else {
+  long fieldA$59 = o1.getLong(0);
+  long fieldB$61 = o2.getLong(0);
+  int comp$63 = (fieldA$59 > fieldB$61 ? 1 : fieldA$59 < fieldB$61 ? -1 : 0);
+  if (comp$63 != 0) {
+    return comp$63;
+  }
+}
+
+          return 0;
+        }
+
+      }
+
+23/04/08 19:56:33 DEBUG FileStoreCommitImpl: Ready to commit
+ManifestCommittable {identifier = 9223372036854775807, watermark = null, logOffsets = {}, commitMessages = [FileCommittable {partition = org.apache.paimon.data.BinaryRow@16592de9, bucket = 0, newFilesIncrement = NewFilesIncrement {newFiles = [
+data-1ab3f3dc-625c-4c3c-9d9a-48bc70cd0389-0.orc
+], changelogFiles = [
+
+]}, compactIncrement = CompactIncrement {compactBefore = [
+
+], compactAfter = [
+
+], changelogFiles = [
+
+]}}]
+23/04/08 19:56:33 DEBUG FileStoreCommitImpl: Ready to commit table files to snapshot #2
+23/04/08 19:56:33 DEBUG FileStoreCommitImpl:   * {ADD, org.apache.paimon.data.BinaryRow@16592de9, 0, 1, {data-1ab3f3dc-625c-4c3c-9d9a-48bc70cd0389-0.orc, 826, 1, org.apache.paimon.data.BinaryRow@5759f99e, org.apache.paimon.data.BinaryRow@5759f99e, org.apache.paimon.stats.BinaryTableStats@7ca7b8be, org.apache.paimon.stats.BinaryTableStats@35f9569e, 1, 1, 0, 0, [], 2023-04-08T11:56:33.130}}
+23/04/08 19:56:33 DEBUG FileStoreCommitImpl: Ready to commit changelog to snapshot #2
+23/04/08 19:56:33 DEBUG SingleFileWriter: Closing file /tmp/default.db/my_table_p/manifest/manifest-e1b44d8b-5481-4757-a0a6-0b4bb45ee043-0
+23/04/08 19:56:33 DEBUG FileStoreCommitImpl: Successfully commit snapshot #2 (path /tmp/default.db/my_table_p/snapshot/snapshot-2) by user dbb15df9-ea50-4780-ae56-49c03ee69b66 with identifier 9223372036854775807 and kind APPEND.
+23/04/08 19:56:33 DEBUG SparkSQLDriver: Result Schema: List()
+Time taken: 7.216 seconds
+23/04/08 19:56:33 INFO SparkSQLCLIDriver: Time taken: 7.216 seconds
