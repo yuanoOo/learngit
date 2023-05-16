@@ -1,0 +1,19 @@
+# Whether to bump the logging level to ERROR on the flask_appbuilder package
+# Set to False if/when debugging FAB related issues like
+# permission management
+SILENCE_FAB = False
+
+
+AUTH_LDAP_SERVER = "ldap://sdsdsds:389"
+AUTH_LDAP_SEARCH = "DC=xx,DC=cc,DC=com"
+
+# see flask_appbuilder.security.manager.BaseSecurityManager.auth_user_ldap
+# see flask_appbuilder.security.manager.BaseSecurityManager.auth_ldap_append_domain
+# AUTH_LDAP_APPEND_DOMAIN = "xx.xx.com"
+# AUTH_LDAP_SEARCH_FILTER = "(objectClass=user)"
+# AUTH_LDAP_UID_FIELD = "sAMAccountName"
+# AUTH_LDAP_EMAIL_FIELD = "userPrincipalName"
+
+
+## slove admin user list all user fail 
+superset init 
