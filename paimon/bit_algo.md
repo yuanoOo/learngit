@@ -1,0 +1,1 @@
+org.apache.paimon.table.sink.KeyAndBucketExtractor#bucket(int, int)
