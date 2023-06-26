@@ -52,18 +52,44 @@ Kylin是基于Calcite框架构建自己的sql系统，而这个方法就是Kylin
 构建model.json字符串，进行Calcite的模式发现, 这就需要学习Calcite了。
 ```json
 {
-    "version": "1.0",
-    "defaultSchema": "SALES",
-    "schemas": [
+  "version": "1.0",
+  "defaultSchema": "DEFAULT",
+  "schemas": [
+    {
+      "type": "custom",
+      "name": "DEFAULT",
+      "factory": "org.apache.kylin.query.schema.OLAPSchemaFactory",
+      "operand": {
+        "project": "learn_kylin"
+      },
+      "functions": [
         {
-            "name": "SALES",
-            "type": "custom",
-            "factory": "org.apache.calcite.adapter.csv.CsvSchemaFactory",
-            "operand": {
-                "directory": "sales"
-            }
+          name: 'PERCENTILE',
+          className: 'org.apache.kylin.measure.percentile.PercentileAggFunc'
+        },
+        {
+          name: 'CONCAT',
+          className: 'org.apache.kylin.query.udf.ConcatUDF'
+        },
+        {
+          name: 'MASSIN',
+          className: 'org.apache.kylin.query.udf.MassInUDF'
+        },
+        {
+          name: 'INTERSECT_COUNT',
+          className: 'org.apache.kylin.measure.bitmap.BitmapIntersectDistinctCountAggFunc'
+        },
+        {
+          name: 'VERSION',
+          className: 'org.apache.kylin.query.udf.VersionUDF'
+        },
+        {
+          name: 'PERCENTILE_APPROX',
+          className: 'org.apache.kylin.measure.percentile.PercentileAggFunc'
         }
-    ]
+      ]
+    }
+  ]
 }
 ```
 ```java
@@ -122,5 +148,15 @@ https://kyligence.io/wp-content/uploads/2019/07/Apache-Kylin-Query-Analysis.pdf
 
 Apache Calcite系列（一）：整体流程解析
 https://zhuanlan.zhihu.com/p/614668529
+https://zhuanlan.zhihu.com/p/623062311
 
 https://xie.infoq.cn/article/1df5a39bb071817e8b4cb4b29
+
+## SQL解析补充知识
+1、SQL通过SqlParser转换为SqlNode，同时也需要进行Sql校验；
+2、通过SqlToRelConverter将SqlNode转化为RelNode;
+3、对SqlNode进行优化，包括转化为物理执行计划；
+4、执行之执行计划，获得结果Results;
+
+用户提交的SQL，Calcite首先会对其进行解析，Calcite使用的JavaCC对SQL解析，
+**解析的结果是一个抽象语法树，其中每个节点都是SqlNode的一个子类。**
