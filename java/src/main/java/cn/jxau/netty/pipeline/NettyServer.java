@@ -12,8 +12,9 @@ import io.netty.channel.epoll.EpollEventLoopGroup;
 import io.netty.channel.nio.NioEventLoopGroup;
 import io.netty.channel.socket.SocketChannel;
 import io.netty.channel.socket.nio.NioSocketChannel;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
+import org.apache.logging.log4j.LogManager;
+import org.apache.logging.log4j.Logger;
+
 
 import java.nio.charset.Charset;
 import java.util.concurrent.ExecutorService;
@@ -23,7 +24,7 @@ import java.util.concurrent.atomic.AtomicBoolean;
 
 public class NettyServer {
 
-    private static final Logger log = LoggerFactory.getLogger(NettyServer.class);
+    private static final Logger log = LogManager.getLogger(NettyServer.class);
 
     private final ServerBootstrap serverBootstrap = new ServerBootstrap();
 
@@ -120,8 +121,7 @@ public class NettyServer {
                 .addLast("h1", new ChannelInboundHandlerAdapter(){
                     @Override
                     public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-                        System.out.println(1);
-                        log.debug("1");
+                        log.info("1");
                         // 反序列化为字符串，并传递给下一个ChannelInboundHandler进行继续加工
                         ByteBuf buf = (ByteBuf) msg;
                         String name = buf.toString(Charset.defaultCharset());
@@ -131,7 +131,7 @@ public class NettyServer {
                 .addLast("h2", new ChannelInboundHandlerAdapter(){
                             @Override
                             public void channelRead(ChannelHandlerContext ctx, Object name) throws Exception {
-                                log.debug("2");
+                                log.info("2");
                                 Student student = new Student(name.toString());
 
                                 // 向下传递，以下方法二选一，否则责任链会断开
@@ -143,7 +143,7 @@ public class NettyServer {
                 .addLast("h3", new ChannelInboundHandlerAdapter(){
                             @Override
                             public void channelRead(ChannelHandlerContext ctx, Object msg) throws Exception {
-                                log.debug("3, 结果{}， class：{}", msg, msg.getClass());
+                                log.info("3, 结果{}， class：{}", msg, msg.getClass());
 
                                 ch.writeAndFlush(ctx.alloc().buffer().writeBytes("Server...".getBytes()));
                             }
@@ -152,21 +152,21 @@ public class NettyServer {
                 .addLast("h4", new ChannelOutboundHandlerAdapter(){
                     @Override
                     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
-                        log.debug("4");
+                        log.info("4");
                         super.write(ctx, msg, promise);
                     }
                 })
                 .addLast("h5", new ChannelOutboundHandlerAdapter(){
                     @Override
                     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
-                        log.debug("5");
+                        log.info("5");
                         super.write(ctx, msg, promise);
                     }
                 })
                 .addLast("h6", new ChannelOutboundHandlerAdapter(){
                     @Override
                     public void write(ChannelHandlerContext ctx, Object msg, ChannelPromise promise) throws Exception {
-                        log.debug("6");
+                        log.info("6");
                         super.write(ctx, msg, promise);
                     }
                 });
