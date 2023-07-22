@@ -1,4 +1,4 @@
-package com.zz.threads;
+package cn.jxau.threads;
 
 import java.util.Arrays;
 import java.util.concurrent.locks.LockSupport;
