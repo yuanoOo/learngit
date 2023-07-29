@@ -2,6 +2,7 @@
 - for case:"before":{}
 The BEFORE field in ogg-json can be configured to contain no table fields, as in the ogg-json example below.
 For this case, ogg-json format should not send a Record of type UPDATE_BEFORE downstream.
+Worse, it can sometimes cause the flink job to crash out.
 ```json
 {
   "table": "ZBZZZ",
