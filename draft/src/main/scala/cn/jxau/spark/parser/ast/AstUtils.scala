@@ -1,9 +1,9 @@
-package cn.zz.bi.parser
+package cn.jxau.spark.parser.ast
 
 import org.antlr.v4.runtime.ParserRuleContext
 import org.antlr.v4.runtime.tree.ParseTree
 
-import scala.collection.convert.ImplicitConversions.`iterator asScala`
+import scala.collection.JavaConversions.asScalaIterator
 object AstUtils {
   /**
    * 树形打印抽象语法树

@@ -1,10 +1,10 @@
 package cn.jxau.spark.parser.ast;
 
-import cn.zz.bi.parser.AstUtils;
+
 import org.apache.spark.sql.catalyst.parser.SqlBaseBaseVisitor;
 import org.apache.spark.sql.catalyst.parser.SqlBaseParser;
 
-public class MyAstVisitor extends SqlBaseBaseVisitor {
+public class MyAstVisitor extends SqlBaseBaseVisitor<Object> {
 
     @Override
     public Object visitSingleStatement(SqlBaseParser.SingleStatementContext ctx) {
