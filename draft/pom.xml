@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>org.example</groupId>
-    <artifactId>java</artifactId>
+    <artifactId>draft</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
@@ -13,6 +13,7 @@
         <maven.compiler.target>8</maven.compiler.target>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <logging.log4j.version>2.17.1</logging.log4j.version>
+        <spark.version>3.2.3</spark.version>
     </properties>
 
     <dependencies>
@@ -87,7 +88,7 @@
             <version>${spark.version}</version>
         </dependency>
 
-                 <dependency>
+        <dependency>
             <groupId>org.antlr</groupId>
             <artifactId>antlr4-runtime</artifactId>
             <version>4.9.3</version>

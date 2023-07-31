@@ -1,4 +1,4 @@
-package cn.zz.bi.spark.sql.ast;
+package cn.jxau.spark.parser.ast;
 
 import cn.zz.bi.parser.AstUtils;
 import org.apache.spark.sql.catalyst.parser.SqlBaseBaseVisitor;

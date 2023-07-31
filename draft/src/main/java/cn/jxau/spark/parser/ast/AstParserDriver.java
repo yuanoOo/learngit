@@ -1,4 +1,4 @@
-package cn.zz.bi.spark.sql.ast;
+package cn.jxau.spark.parser.ast;
 
 import org.antlr.v4.runtime.CharStreams;
 import org.antlr.v4.runtime.CommonTokenStream;
