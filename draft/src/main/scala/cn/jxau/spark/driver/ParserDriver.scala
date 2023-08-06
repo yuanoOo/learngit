@@ -15,10 +15,11 @@ object ParserDriver {
         println(logicalPlan.getClass.getName)
         println(logicalPlan.toString())
 
-        session.sessionState
-
-        val expression = session.sessionState.sqlParser.parseExpression(sqlText = query)
+        val expression = session.sessionState.sqlParser.parseExpression("stu")
         println(expression)
+
+        val execution = session.sessionState.executePlan(logicalPlan)
+        println(execution)
 
     }
 }
